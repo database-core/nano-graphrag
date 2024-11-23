@@ -833,6 +833,7 @@ async def _build_local_query_context(
     results = await entities_vdb.query(query, top_k=query_param.top_k)
     if not len(results):
         return None
+
     node_datas = await asyncio.gather(
         *[knowledge_graph_inst.get_node(r["entity_name"]) for r in results]
     )

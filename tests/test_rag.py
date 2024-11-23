@@ -7,8 +7,9 @@ from nano_graphrag._utils import wrap_embedding_func_with_attrs
 
 os.environ["OPENAI_API_KEY"] = "FAKE"
 
-WORKING_DIR = "./tests/nano_graphrag_cache_TEST"
+WORKING_DIR = "./tests/tests"
 if not os.path.exists(WORKING_DIR):
+    print(os.curdir)
     os.mkdir(WORKING_DIR)
 else:
     shutil.rmtree(WORKING_DIR)
